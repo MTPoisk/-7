@@ -1,0 +1,50 @@
+# Практична робота 
+# Білет №7 
+# Тема: Логічні оператори та порівняння 
+ 
+name = input("Ім'я клієнта: ") 
+age = int(input("Вік: ")) 
+nights = int(input("Кількість ночей: ")) 
+budget = float(input("Бюджет (грн): ")) 
+price_per_night = float(input("Ціна за ніч (грн): ")) 
+document = input("Наявність документа (так/ні): ") 
+
+valid_age = age >= 18 
+
+valid_nights = nights >= 1 and nights <= 14 
+
+total_cost = nights * price_per_night 
+enough_budget = total_cost <= budget 
+
+has_document = document == "так" 
+
+can_book = ( 
+    valid_age 
+    and valid_nights 
+    and enough_budget 
+    and has_document 
+) 
+
+print("Клієнт:", name) 
+print("Загальна вартість:", total_cost, "грн") 
+print("Вік підходить:", valid_age) 
+print("Кількість ночей підходить:", valid_nights) 
+print("Бюджет покриває вартість:", enough_budget) 
+print("Наявність документа:", has_document) 
+print("Можна забронювати:", can_book) 
+
+is_long_stay = nights > 7 
+
+is_expensive = total_cost > 10000 
+
+is_single_night = nights == 1 
+
+is_low_budget = budget < 2000 
+
+booking_denied = not can_book 
+
+print("Проживання понад 7 ночей:", is_long_stay) 
+print("Вартість понад 10 000 грн:", is_expensive) 
+print("Бронювання на одну ніч:", is_single_night) 
+print("Бюджет менше 2000 грн:", is_low_budget) 
+print("Відмова в бронюванні:", booking_denied)
